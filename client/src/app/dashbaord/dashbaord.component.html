@@ -149,13 +149,15 @@
       <table>
         <thead>
           <tr>
+            <th>Sr</th>
             <th>Description</th>
             <th>Type</th>
             <th>Availability</th>
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let resource of resources">
+          <tr *ngFor="let resource of resources; let i = index">
+            <td>{{ i + 1 }}</td>
             <td>{{ resource.description }}</td>
             <td>{{ resource.resourceType }}</td>
             <td>{{ resource.availability }}</td>
