@@ -37,17 +37,22 @@
   }
 
   /* Hero Section */
-  .hero-section {
-    background: linear-gradient(to right, #007BFF, #00D4FF); /* Blue to Cyan */
+  
+  
+.hero-section {
+    background:url('../../assets/team/landingpage') no-repeat center ; 
     height: 70vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #FFFFFF; /* White */
+    color: #030303; /* White */
     text-align: center;
     padding: 20px;
     animation: fadeIn 2s ease-in-out;
-  }
+}
+
+
+
   .hero-section h1 {
     font-size: 3rem;
     font-weight: 700;
@@ -259,7 +264,8 @@
   </div>
 </nav>
 
-<header class="hero-section">
+<header style="background: url('assets/team/bluelandingPage.jpg');" class="hero-section">
+  <!-- <header style="background: url('assets/team/landingpage.jpg');" class="hero-section"></header> -->
   <div>
     <h1>Welcome to EduSync</h1>
     <h5>Empowering education through enagagement</h5>
@@ -335,7 +341,7 @@
     </div>
   </section>
 
-  <section id="contact" class="text-center mt-5">
+  <!-- <section id="contact" class="text-center mt-5">
     <h2 class="text-primary">Contact Us</h2>
     <div class="row justify-content-center">
       <div class="col-md-6">
@@ -344,8 +350,25 @@
             <input type="text" placeholder="Your Name" required>
             <input type="email" placeholder="Your Email" required>
             <textarea placeholder="Your Message" rows="5" required></textarea>
+            <button type="submit()">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section> -->
+  
+  <section id="contact" class="text-center mt-5">
+    <h2 class="text-primary">Contact Us</h2>
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <div class="contact-form">
+          <form (ngSubmit)="onSubmit()">
+            <input type="text" [(ngModel)]="name" name="name" placeholder="Your Name" required>
+            <input type="email" [(ngModel)]="email" name="email" placeholder="Your Email" required>
+            <textarea [(ngModel)]="message" name="message" placeholder="Your Message" rows="5" required></textarea>
             <button type="submit">Send Message</button>
           </form>
+          <p *ngIf="successMessage" class="popup-message">{{ successMessage }}</p>
         </div>
       </div>
     </div>
