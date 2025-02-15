@@ -1,0 +1,209 @@
+// // .registration-container {
+// //   max-width: 600px;
+// //   margin: 50px auto; /* Added margin from the top */
+// //   padding: 2em;
+// //   border: 1px solid #b3e5fc;
+// //   border-radius: 10px;
+// //   background-color: #c5d4e1;
+// //   box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+// // }
+
+// h2 {
+//   text-align: center;
+//   color: #090a0a;
+//   white-space: nowrap; /* Ensure heading is in a single line */
+//   overflow: hidden;
+//   text-overflow: ellipsis;
+// }
+
+// #mess {
+//   text-align: center;
+//   color: #007bb5;
+// }
+
+// .form-group {
+//   margin-bottom: 1.5em;
+// }
+
+// label {
+//   display: block;
+//   margin-bottom: 0.5em;
+//   color: #007bb5;
+// }
+
+// input, select {
+//   width: 100%;
+//   padding: 0.75em;
+//   margin-bottom: 0.5em;
+//   border: 1px solid #b3e5fc;
+//   border-radius: 5px;
+//   box-sizing: border-box;
+// }
+
+// button {
+//   padding: 0.75em;
+//   background-color: #007bb5;
+//   color: #ffffff;
+//   font-size: 16px;
+//   border: none;
+//   border-radius: 5px;
+//   cursor: pointer;
+//   width: 100%;
+//   transition: background-color 0.3s;
+// }
+
+// button:hover {
+//   background-color: #005f8b;
+// }
+
+// .error-message {
+//   color: red;
+//   font-size: 0.875em;
+// }
+
+// .login-link {
+//   display: block;
+//   text-align: center;
+//   color: #40484b;
+//   text-decoration: none;
+// }
+
+// .login-link:hover {
+//   text-decoration: underline;
+// }
+
+// .response-message {
+//   margin-top: 1em;
+//   color: #007bb5;
+//   text-align: center;
+// }
+
+// // .registration-container {
+// //   max-width: 600px;
+// //   margin: 50px auto; /* Added margin from the top */
+// //   padding: 2em;
+// //   border: 1px solid #b3e5fc;
+// //   border-radius: 10px;
+// //   background-color: #ffffff;
+// //   box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+// //   background-image: url('/client/src/assets/regi.jpg'); /* Update the path as per your folder structure */
+// //   background-size: cover;
+// //   background-position: center;
+// // }
+
+/* Apply background to the entire page */
+// body {
+//  background-image: url('/assets/team/regis.jpg'); /* Make sure the image is in src/assets/ */
+// background-size: cover;
+// background-position: center;
+// background-attachment: fixed; /* Keeps the background fixed while scrolling */
+// background-repeat: no-repeat;
+//  }
+
+
+// .registration-container {
+//     background-image: url('/assets/team/regis.jpg'); /* Replace with your image URL */
+//     background-size: cover;
+//     background-position: center;
+//     background-repeat: no-repeat;
+//     min-height: 100vh; /* Ensure it covers the full screen */
+//     display: flex;
+//     justify-content: right;
+//     align-items: center;
+// }
+
+// .form-card {
+//     background: rgba(255, 255, 255, 0.9); /* White background with slight transparency */
+//     padding: 2rem;
+//     border-radius: 10px;
+//     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+//     max-width: 500px;
+//     width: 80%;
+// }
+
+.registration-container {
+    background-image: url('../../assets/team/regifinal.jpg'); /* Replace with your image URL */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh; /* Ensure it covers the full screen */
+    display: flex;
+    justify-content:center; /* Aligns form to the right */
+    align-items: center;
+    padding-right: 0px; /* Adds space from the right */
+}
+
+/* Registration Form Styling */
+.form-card {
+    background: rgba(255, 255, 255, 0.9); /* White background with slight transparency */
+    padding: 1.5rem; /* Reduced padding */
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 350px; /* Reduced form width */
+    width: 90%;
+    
+}
+h2{
+  text-align: center;
+  color: black;
+}
+
+/* Input Field Styling */
+.form-group {
+    margin-bottom: 12px; /* Reduce space between fields */
+}
+
+label {
+    font-size: 14px;
+    font-weight: bold;
+    color: #007bb5;
+}
+
+input, select {
+    width: 100%;
+    padding: 8px;
+    font-size: 14px;
+    border: 1px solid #b3e5fc;
+    border-radius: 5px;
+}
+
+/* Button Styling */
+button {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    background: #007bff;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:disabled {
+    background: #ccc;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .registration-container {
+        justify-content: center; /* Center form on smaller screens */
+        padding-right: 0;
+    }
+
+    .form-card {
+        max-width: 90%;
+    }
+}
+
+.login-link {
+    color: #007bb5;
+    font-weight: bold;
+    text-decoration: none;
+    display: block;
+    text-align: center; /* Center the registration link */
+  //   margin-top: 1em;
+  }
+  
+  .login-link:hover {
+    text-decoration: underline;
+  }

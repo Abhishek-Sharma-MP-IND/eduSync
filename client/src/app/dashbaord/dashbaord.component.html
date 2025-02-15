@@ -1,0 +1,196 @@
+<div *ngIf="role !=''">
+<app-nav ></app-nav>
+
+<div class="dashboard-container">
+  <h1><img src="assets/team/dashuser.png" alt="">Welcome {{username}}</h1>
+<!-- <nav class="navbar"> -->
+    <!-- <ul> 
+      <ng-container *ngIf="role === 'student'">
+        <li><a routerLink="/booking-details">View Booking Status</a></li>
+        <li><a routerLink="/register-for-event">Register for Event</a></li>
+        <li><button (onClick)="onLogout()">Logout</button></li>
+      </ng-container>
+      <ng-container *ngIf="role === 'educator'">
+        <li ><a routerLink="/dashboard" >View Events</a></li>
+        <li><a href="#"  (onClick)="onLogout()">Logout</a></li>
+      </ng-container>
+      <ng-container *ngIf="role === 'institution'">
+        <li><a routerLink="/create-event">Create Event</a></li>
+        <li><a routerLink="/add-resource">Add Resource</a></li>
+        <li><a routerLink="/resource-allocate">Allocate Resource</a></li>
+        <li><a href="#"  (onClick)="onLogout()">Logout</a></li>
+      </ng-container>
+    </ul> -->
+
+
+ <!-- <div class="brand-name"><h1 style="color: white;">EduSync</h1></div>
+    <ul>
+      <ng-container *ngIf="role === 'student'">
+        <li><a routerLink="/booking-details">View Booking Status</a></li>
+        <li><a routerLink="/register-for-event">Register for Event</a></li>
+        <li><a href="#" (click)="onLogout()">Logout</a></li>
+      </ng-container>
+      <ng-container *ngIf="role === 'educator'">
+        <li><a routerLink="/dashboard">View Events</a></li>
+        <li><a href="#" (click)="onLogout()">Logout</a></li>
+      </ng-container>
+      <ng-container *ngIf="role === 'institution'">
+        <li><a routerLink="/create-event">Create Event</a></li>
+        <li><a routerLink="/add-resource">Add Resource</a></li>
+        <li><a routerLink="/resource-allocate">Allocate Resource</a></li>
+        <li><a href="#" (click)="onLogout()">Logout</a></li>
+      </ng-container>
+    </ul>    
+  </nav>  -->
+
+  <!-- Student Dashboard View -->
+  <ng-container *ngIf="role === 'student'">
+ 
+    <!-- <section class="card">
+      <h2>Registration for Event</h2>
+      <input type="text" placeholder="Enter Event ID" [(ngModel)]="eventId" />
+      <input type="text" placeholder="Enter Student ID" [(ngModel)]="studentId" />
+      <button (click)="registerEvent()">Submit</button>
+    </section> -->
+    
+    <app-register-for-event></app-register-for-event>
+    <!-- <app-booking-details></app-booking-details> -->
+ 
+    <!-- <section class="card">
+      <h2>Event Registration Status</h2>
+      <input type="text" placeholder="Enter Student ID" [(ngModel)]="searchStudentId" />
+      <button (click)="searchEventStatus()">Search</button>
+ 
+      <table *ngIf="eventStatus.length">
+        <thead>
+          <tr>
+            <th>Event ID</th>
+            <th>Student ID</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let status of eventStatus">
+            <td>{{ status.eventId }}</td>
+            <td>{{ status.studentId }}</td>
+            <td>{{ status.status }}</td>
+          </tr>
+        </tbody>
+      </table>
+ 
+      <p *ngIf="showMessage">{{ responseMessage }}</p>
+    </section> -->
+  </ng-container>
+ 
+  <!-- Educator Dashboard View -->
+  <ng-container *ngIf="role === 'educator'">
+ 
+    <app-view-events></app-view-events>
+    <!-- <section class="card">
+      <h2>Manage Events</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Sr</th>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Material</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let event of educatorEvents; let i = index">
+            <td>{{ i + 1 }}</td>
+            <td>{{ event.name }}</td>
+            <td>{{ event.description }}</td>
+            <td>{{ event.materials }}</td>
+            <td><button (click)="onUpdate(event)">Update</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </section> -->
+  </ng-container>
+ 
+  <!-- Institution Dashboard View (Admin) -->
+  <ng-container *ngIf="role === 'institution'">
+    <!-- <nav>
+      <ul>
+        <li><a routerLink="/create-event">Create Event</a></li>
+        <li><a routerLink="/add-resource">Add Resource</a></li>
+        <li><a routerLink="/resource-allocate">Allocate Resource</a></li>
+        <li><a routerLink="/logout">Logout</a></li>
+      </ul>
+    </nav> -->
+ 
+    <section class="card">
+      <h2>All Events</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Sr</th>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Material</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let event of events; let i = index">
+            <td>{{ i + 1 }}</td>
+            <td>{{ event.name }}</td>
+            <td>{{ event.description }}</td>
+            <td>{{ event.materials }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+ 
+    <section class="card">
+      <h2>All Resources</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Description</th>
+            <th>Type</th>
+            <th>Availability</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let resource of resources">
+            <td>{{ resource.description }}</td>
+            <td>{{ resource.resourceType }}</td>
+            <td>{{ resource.availability }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="card">
+      <h2>Allocated Resources</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Event ID</th>
+            <th>Resource Description</th>
+            <th>Availability</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let allocatedResource of allocatedResources">
+            <td>{{ allocatedResource.id }}</td>
+            <td>{{ allocatedResource.description }}</td>
+            <td>{{ allocatedResource.availability }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- <section>
+    <h2>Find Event</h2>
+      <input type="text" placeholder="Enter Event ID" (input)="searchEventStatus($event)" />
+      <button (click)="">Search</button> 
+    </section> -->
+
+  </ng-container>
+</div>
+
+</div>

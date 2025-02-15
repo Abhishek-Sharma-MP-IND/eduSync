@@ -1,0 +1,104 @@
+<!-- <div class="registration-container">
+
+    <h2>Register</h2>
+    <p id="mess">Please enter your details here</p>
+    <form [formGroup]="itemForm" (ngSubmit)="onRegister()">
+        <div class="form-group">
+            <label for="username">Username</label>
+            <input id="username" type="text" formControlName="username" placeholder="Username">
+
+            <div *ngIf="itemForm.get('username')?.invalid && itemForm.get('username')?.touched" class="error-message">
+                Username is required.
+            </div>        
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input id="email" type="email" formControlName="email" placeholder="name@example.com">
+
+            <div *ngIf="itemForm.get('email')?.invalid && itemForm.get('email')?.touched" class="error-message">
+                Valid email is required.
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input id="password" type="password" formControlName="password" placeholder="********">
+            <div *ngIf="itemForm.get('password')?.invalid && itemForm.get('password')?.touched" class="error-message">
+                Password is required.
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="role">Role:</label>
+            <select id="role" formControlName="role">
+
+                <option value="institution">Institution</option>
+                <option value="educator">Educator</option>
+                <option value="student">Student</option>
+            </select>
+            <div *ngIf="itemForm.get('role')?.invalid && itemForm.get('role')?.touched" class="error-message">
+                Role is required.
+            </div>
+        </div>
+
+        <button type="submit" [disabled]="itemForm.invalid">Submit</button>
+    </form>
+    <p><a routerLink="login" class="login-link">Login Instead?</a></p>
+    <div *ngIf="responseMessage" class="message" [ngClass]="{'success-message': showMessage && !showError, 'error-message': showError}">
+        {{ responseMessage }}
+      </div>
+</div> -->
+
+
+<div class="registration-container">
+    <div class="form-card">
+        <h2>Register</h2>
+        <br>
+        <p id="mess" style="font-family:'Times New Roman', Times, serif;">* Fill out the required fields </p>
+        <form [formGroup]="itemForm" (ngSubmit)="onRegister()">
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input id="username" type="text" formControlName="username" placeholder="Username">
+                <div *ngIf="itemForm.get('username')?.invalid && itemForm.get('username')?.touched" class="error-message">
+                    Username is required.
+                </div>        
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input id="email" type="email" formControlName="email" placeholder="name@example.com">
+                <div *ngIf="itemForm.get('email')?.invalid && itemForm.get('email')?.touched" class="error-message">
+                    Valid email is required.
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input id="password" type="password" formControlName="password" placeholder="Password">
+                <div *ngIf="itemForm.get('password')?.invalid && itemForm.get('password')?.touched" class="error-message">
+                    Password is required.
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="role">Role:</label>
+                <select id="role" formControlName="role">
+                    <option value="institution">Institution</option>
+                    <option value="educator">Educator</option>
+                    <option value="student">Student</option>
+                </select>
+                <div *ngIf="itemForm.get('role')?.invalid && itemForm.get('role')?.touched" class="error-message">
+                    Role is required.
+                </div>
+            </div>
+
+            <button type="submit" [disabled]="itemForm.invalid">Submit</button>
+        </form>
+        <p text align="center"><a routerLink="/login" class="login-link">Login</a></p>
+        <div *ngIf="responseMessage" class="message" [ngClass]="{'success-message': showMessage && !showError, 'error-message': showError}">
+            {{ responseMessage }}
+        </div>
+    </div>
+</div>
+

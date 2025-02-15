@@ -1,0 +1,44 @@
+<div class="container">
+  <h2>Registration for event</h2>
+
+   <ng-container>
+     <section class="card">
+       <table class="table">
+         <thead>
+           <tr>
+             <th>Sr</th>
+             <th>Name</th>
+             <th>Description</th>
+             <th>Material</th>
+             <th>Action</th>
+           </tr>
+         </thead>
+         <tbody>
+           <tr *ngFor="let event of events; let i = index">
+             <td>{{ i + 1 }}</td>
+             <td>{{ event.name }}</td>
+             <td>{{ event.description }}</td>
+             <td>{{ event.materials }}</td>
+             <td><button (click)="onRegister(event.id)">Register</button></td>
+           </tr>
+         </tbody>
+       </table>
+       <div *ngIf="responseMessage" class="message" [ngClass]="{'success-message': showMessage && !showError, 'error-message': showError}">
+         {{ responseMessage }}
+       </div>
+     </section>
+    </ng-container>
+  </div>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 

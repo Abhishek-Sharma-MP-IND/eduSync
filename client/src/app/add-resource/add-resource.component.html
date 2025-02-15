@@ -1,0 +1,48 @@
+<app-nav></app-nav>
+<div class="add-resource">
+  <h2>Add Resource</h2>
+  <form [formGroup]="itemForm" (ngSubmit)="onSubmit()">
+    <div>
+      <label for="description">Description</label>
+      <input id="description" formControlName="description" placeholder="Description">
+      <div *ngIf="itemForm.get('description')?.touched && itemForm.get('description')?.invalid">
+        Description is required.
+      </div>
+    </div>
+    
+    <div>
+      <label for="resourceType">Resource Type</label>
+      <input id="resourceType" formControlName="resourceType" placeholder="Resource type">
+      <div *ngIf="itemForm.get('resourceType')?.touched && itemForm.get('resourceType')?.invalid">
+        Resource Type is required.
+      </div>
+    </div>
+    
+    <div>
+      <label for="availability">Availability</label>
+      <input id="availability" formControlName="availability" placeholder="Status">
+      <div *ngIf="itemForm.get('availability')?.touched && itemForm.get('availability')?.invalid">
+        Availability is required.
+      </div>
+    </div>
+    
+    <button type="submit">Add Resource</button>
+  </form>
+  
+  <div *ngIf="showError" class="error-message">
+    {{ errorMessage }}
+  </div>
+  
+  <div *ngIf="showMessage" class="success-message">
+    {{ responseMessage }}
+  </div>
+  
+  <div *ngIf="resourceList">
+    <h2>Resources</h2>
+    <ul>
+      <li *ngFor="let resource of resourceList">
+        {{ resource.description }} - {{ resource.resourceType }} - {{ resource.availability }}
+      </li>
+    </ul>
+  </div>
+</div>
